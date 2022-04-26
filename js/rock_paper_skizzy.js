@@ -1,15 +1,11 @@
 const playerSelection = prompt('Rock, Paper, or Skizzy?')
-const computerSelection = computerPlay();
+let computerSelection;
 
-function computerPlay(max) {
-  return Math.floor(Math.random() * max);
+var arr = ['rock', 'paper', 'skizzy'];
+
+function computerPlay() {
+  computerSelection = arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-
-
-
-
-
-
-console.log(computerPlay(3));
+computerPlay();
+console.log(computerSelection);
