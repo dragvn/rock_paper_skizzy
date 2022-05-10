@@ -21,15 +21,12 @@ function round() {
     return prompt('Rock, Paper, or Skizzy?')
   }
 
-  if (playerSelection == 'rock' && computerSelection == 'skizzy'){
-    alert(win);
-    userScore++;
-  }
-  else if (playerSelection == 'paper' && computerSelection == 'rock') {
-    alert(win);
-    userScore++;
-  }
-  else if (playerSelection == 'skizzy' && computerSelection == 'paper') {
+  if (
+    (playerSelection == 'rock' && computerSelection == 'skizzy') ||
+    (playerSelection == 'paper' && computerSelection == 'rock') ||
+    (playerSelection == 'skizzy' && computerSelection == 'paper')
+  )
+  {
     alert(win);
     userScore++;
   }
@@ -48,5 +45,18 @@ function game() {
     round();
   }
 }
+
+function alertWinner() {
+  if (userScore > compScore) {
+    alert (`You won the game!!! Final score: User ${userScore} Computer ${compScore}`)
+  }
+  else if (userScore < compScore) {
+    alert (`You lost the game!!! Final score: User ${userScore} Computer ${compScore}`)
+  }
+  else {
+    alert (`It\'s a tie!!! Final score: User ${userScore} Computer ${compScore}`)
+  }
+}
 //execute game function (runs round function 5 times)
 game();
+alertWinner();
